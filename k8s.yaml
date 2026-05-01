@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payment-saga
+  name: payment-saga-orche
   namespace: kafka
   labels:
-    app: payment-saga
+    app: payment-saga-orche
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: payment-saga
+      app: payment-saga-orche
   template:
     metadata:
       labels:
-        app: payment-saga
+        app: payment-saga-orche
     spec:
       containers:
-        - name: payment-saga
-          image: yklee2002/payment-saga:latest
+        - name: payment-saga-orche
+          image: yklee2002/payment-saga-orche:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -28,14 +28,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: payment-saga-service
+  name: payment-saga-orche-service
   namespace: kafka
   labels:
-    app: payment-saga
+    app: payment-saga-orche
 spec:
   type: NodePort
   selector:
-    app: payment-saga
+    app: payment-saga-orche
   ports:
     - name: http
       port: 8080

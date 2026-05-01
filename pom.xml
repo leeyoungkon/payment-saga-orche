@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>payment-saga</artifactId>
+	<artifactId>payment-saga-orche</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>payment-saga</name>
+	<name>payment-saga-orche</name>
 	<description/>
 	<url/>
 	<licenses>
